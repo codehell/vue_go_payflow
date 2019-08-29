@@ -2,6 +2,8 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
 import Auth from './views/Auth.vue';
+import Login from './components/Auth/LogIn.vue';
+import Signin from './components/Auth/SignIn.vue';
 
 Vue.use(Router);
 
@@ -15,9 +17,22 @@ export default new Router({
       component: Home,
     },
     {
-      path: '/auth/sign-in',
+      path: '/auth',
       name: 'auth',
+      redirect: {name: 'login'},
       component: Auth,
+      children: [
+        {
+          path: 'login',
+          name: 'login',
+          component: Login,
+        },
+        {
+          path: 'sign-in',
+          name: 'signin',
+          component: Signin,
+        },
+      ],
     },
     {
       path: '/about',

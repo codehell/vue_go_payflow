@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SignIn/>
+    <router-view/>
   </div>
 </template>
 
@@ -8,10 +8,6 @@
 import { Component, Vue } from 'vue-property-decorator';
 import SignIn from '@/components/Auth/SignIn.vue';
 
-@Component({
-  components: {
-    SignIn,
-  },
-})
+@Component
 export default class Auth extends Vue {}
 </script>

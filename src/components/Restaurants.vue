@@ -12,7 +12,7 @@
 
     @Component
     export default class HelloWorld extends Vue {
-        restaurants = [];
+        restaurants: object[] = [];
         @Prop() private msg!: string;
 
         async mounted() {
